@@ -24,9 +24,6 @@ cp ../Python-2.7.5-native/Parser/pgen ./Parser/pgen
 chmod +x Parser/pgen
 emmake make
 
-llvm-link libpython2.7.so Modules/python.o -o python.bc
-emcc -O2 python.bc -o a.out.js
-node a.out.js -S -c "print 'Congratulations'"
-
+llvm-link libpython2.7.so Modules/python.o -o ../python.bc
 cd ..
 
